@@ -1,0 +1,18 @@
+{ 
+  "name": "server",
+  "version": "1.0.0",
+  "homepage": "https://jorhovhannisyan.github.io/my-react-app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "predeploy": "cd client && npm run build",
+    "deploy": "cd client && npx gh-pages -d build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

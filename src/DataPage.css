@@ -1,0 +1,163 @@
+.dataPageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: center;    
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f5ff, #e0f0ff);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px 0;
+}
+
+.hint {
+  width: 90%;
+  max-width: 1000px;
+  background-color: #003366;
+  color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.innerContainer {
+  display: flex;
+  width: 90%;     
+  max-width: 1000px; 
+  height: 80%;  
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.leftPanel {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+  border-right: 2px solid #cce0ff;
+}
+
+.leftPanel label {
+  font-weight: bold;
+  color: #003366; 
+  margin-bottom: 5px;
+}
+
+.leftPanel input,
+.leftPanel select {
+  padding: 10px;
+  border: 1px solid #003366;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.leftPanel input:focus,
+.leftPanel select:focus {
+  outline: none;
+  border-color: #00aa00; 
+  box-shadow: 0 0 5px #00aa00;
+}
+
+.rightPanel {
+  flex: 1;
+  background-color: #e6f2ff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #003366;
+  overflow-y: auto;
+}
+
+.rightPanel h3 {
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button.calculateBtn {
+  background-color: #003366;
+  color: #ffffff;
+}
+
+button.calculateBtn:hover {
+  background-color: #0055aa;
+}
+
+button.addBtn {
+  background-color: #00aa00;
+  color: #ffffff;
+}
+
+button.addBtn:hover {
+  background-color: #00cc00;
+}
+
+@media (max-width: 900px) {
+  .innerContainer {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .leftPanel,
+  .rightPanel {
+    flex: unset;
+    width: 100%;
+    height: auto;
+    border-right: none;
+  }
+
+  .leftPanel {
+    border-bottom: 2px solid #cce0ff;
+  }
+}
+
+
+/* popup */
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: fadeInOut 3s ease forwards;
+}
+
+/* успешное добавление */
+.popup.success {
+  background-color: #00aa00;
+}
+
+/* ошибка или предупреждение */
+.popup.error {
+  background-color: #cc3300;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
